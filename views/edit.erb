@@ -1,0 +1,23 @@
+<div class="content">
+
+  <h2>Edit pizza</h2>
+
+  <form action="/pizza/<%= @pizza.id %>" method="post">
+     <label for="first_name" >First Name:</label>
+    <input type="text" name="first_name" value="<%= @pizza.first_name %>"><br>
+    <label for="last_name" >Last Name:</label>
+    <input type="text" name="last_name" value="<%= @pizza.last_name %>"><br>
+
+    <label for="topping">Select a pizza:</label>
+    <select name="topping">
+      <option <%= "selected='selected'" if @pizza.topping() == "Margherita" %> value='Margherita'>Margherita</option>
+      <option <%= "selected='selected'" if @pizza.topping() == "Calzone" %> value='Calzone'>Calzone</option>
+    </select><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="<%= @pizza.quantity %>"><br>
+
+    <input type='submit' value="Update Pizza">
+  </form>
+
+</div>
